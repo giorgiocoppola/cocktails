@@ -1,6 +1,6 @@
 import React , { useState } from 'react'
 
-function Drink2({strDrink,strDrinkThumb,strIngredient1,strIngredient2,strIngredient3,strIngredient4}) {
+function Drink2({strDrink,strDrinkThumb,strCategory,strAlcoholic,strGlass,strIngredient1,strIngredient2,strIngredient3,strIngredient4,strInstructionsIT}) {
 
   const [count,setCount] = useState(0);
   const max = 5;
@@ -34,24 +34,27 @@ function Drink2({strDrink,strDrinkThumb,strIngredient1,strIngredient2,strIngredi
     <div className='card'>
       
          <img src={strDrinkThumb} alt={strDrink} width="300px" height="300px"/>
-         <p style={{textAlign:"center"}}>{strDrink}</p>
-         <p style={{textAlign:"center"}}>Ingredients:</p>
+         <h3 className='text-center'>{strDrink}</h3>
+         <p className='text-center'>Category: {strCategory}</p>
+         <p className='text-center'>Graduation: {strAlcoholic}</p>
+         <p className='text-center'>Glass: {strGlass}</p>
+         <p className='text-center'>Ingredients:</p>
          <ul>
-            <li style={{textAlign:"center"}}>{strIngredient1}</li>
-            <li style={{textAlign:"center"}}>{strIngredient2}</li>
-            <li style={{textAlign:"center"}}>{strIngredient3}</li>
-            <li style={{textAlign:"center"}}>{strIngredient4}</li>
+            <li className='text-center'>{strIngredient1}</li>
+            <li className='text-center'>{strIngredient2}</li>
+            <li className='text-center'>{strIngredient3}</li>
+            <li className='text-center'>{strIngredient4}</li>
          </ul>
-     
+      
           
          <div className="sle">
-            <button className='inc' onClick = {handleincrement}>+</button>
-            <p className='cont'>{count}</p>
-            <button className='dec' onClick = {handledecrement}>-</button>
+            <button className='inc btn btn-primary fs-4 rounded-circle' onClick = {handleincrement}>+</button>
+            <p className='cont fs-1'>{count}</p>
+            <button className='dec btn btn-primary fs-4 rounded-circle' onClick = {handledecrement}>-</button>
          </div>
           
           <div className='ord'>
-             <button className='ordina'>Ordina</button>
+             <button className='ordina btn btn-primary fs-3 p-2'>Ordina</button>
           </div>
     </div>
   )

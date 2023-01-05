@@ -40,8 +40,11 @@ function Drink2api() {
             <input type="text" value={letter} onChange = { e => setLetter(e.target.value)} />
         </label>
         <button onClick={ () => setLetter2(letter) }>Cerca</button>
-         <h1 style={{textAlign:"center",color:"red"}}>Cocktails 2</h1>
-          <p style={{textAlign:"center"}}><Link style={{color:"blue",textDecoration:"none"}} to='/'>Drink</Link></p>
+
+    
+
+         <h1 className='text-center text-danger fw-bolder'>Cocktails 2</h1>
+          <p style={{textAlign:"center"}}><Link style={{color:"blue",textDecoration:"none",fontSize:"20px"}} to='/'>Drink</Link></p>
 
          <div className='card2'>
        {
