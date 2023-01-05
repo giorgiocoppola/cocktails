@@ -11,6 +11,7 @@ const Drinkapi = () => {
   const [drinks,setDrinks] = useState([]);
   const [search, setSearch] = useState("");
   const [search2,setSearch2] = useState("");
+  const [originalArray,setOriginalArray] = useState([]);
   
 
  
@@ -23,6 +24,7 @@ const Drinkapi = () => {
     .then( res => {
          console.log(res);
          setDrinks(res?.data?.drinks);
+         setOriginalArray(res?.data?.drinks);
     })
 
     .catch(err => {
@@ -51,15 +53,17 @@ const Drinkapi = () => {
 
    const handlefilter = () => {
          
-       const drinksfilter = drinks.filter( drink => drink.strCategory === "Cocktail")
-       setDrinks([...drinksfilter]);
+       const drinksfilter = originalArray.filter( drink => drink.strCategory === "Cocktail")
+       setDrinks(drinksfilter);
+      
       
    }
 
    const handlefilter2 = () => {
          
-    const drinksfilter = drinks.filter( drink => drink.strCategory === "Ordinary Drink")
-    setDrinks([...drinksfilter]);
+   
+    const drinksfilter = originalArray.filter( drink => drink.strCategory === "Ordinary Drink")
+    setDrinks(drinksfilter);
    
 }
 
@@ -68,7 +72,7 @@ const Drinkapi = () => {
 
  const resetdrinks = () => {
 
-  setDrinks(drinks);
+  setDrinks(originalArray);
 }
   
   return (
@@ -79,6 +83,8 @@ const Drinkapi = () => {
        <input type="text" value={search} onChange={ (e) => setSearch(e.target.value)}/>
        <button onClick={()=>setSearch2(search)} >Cerca</button>
       </label>
+
+      
        <button onClick={handlefilter} >Categoria Cocktail</button>
        <button onClick={handlefilter2} >Categoria Ordinary Drink</button>
        <button onClick={resetdrinks} >Reset</button>

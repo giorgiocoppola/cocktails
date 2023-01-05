@@ -8,6 +8,7 @@ function Drink2api() {
     const [drinks,setDrinks] = useState([]);
     const [letter,setLetter] = useState("");
     const [letter2,setLetter2] = useState("");
+    const [originalArray,setOriginalArray] = useState([])
 
     const getCocktail = (drinks) => {
 
@@ -17,6 +18,7 @@ function Drink2api() {
         .then( res => {
              console.log(res);
              setDrinks(res?.data?.drinks);
+             setOriginalArray(res?.data?.drinks);
         })
     
         .catch(err => {
@@ -33,6 +35,24 @@ function Drink2api() {
       },[letter2]);
       
     
+      const handlefilter = () => {
+         
+        const drinksfilter = originalArray.filter( drink => drink.strCategory === "Cocktail")
+        setDrinks(drinksfilter);
+       
+    }
+ 
+    const handlefilter2 = () => {
+          
+     const drinksfilter = originalArray.filter( drink => drink.strCategory === "Ordinary Drink")
+     setDrinks(drinksfilter);
+    
+ }
+
+ const handlereset  = () => {
+
+     setDrinks(originalArray);
+ }
 
   return (
     <div>
@@ -40,7 +60,9 @@ function Drink2api() {
             <input type="text" value={letter} onChange = { e => setLetter(e.target.value)} />
         </label>
         <button onClick={ () => setLetter2(letter) }>Cerca</button>
-
+        <button onClick={handlefilter} >Categoria Cocktail</button>
+        <button onClick={handlefilter2} >Categoria Ordinary Drink</button>
+        <button onClick={handlereset} >Reset</button>
     
 
          <h1 className='text-center text-danger fw-bolder'>Cocktails 2</h1>
