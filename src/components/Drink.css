@@ -1,0 +1,42 @@
+
+.sle {
+   
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inc , .dec , .ordina {
+
+    background-color: blue;
+    border-color: blue;
+    font-size: 30px;
+    border-radius: 30px;
+    color:white;
+}
+
+.ordina {
+    padding: 10px;
+}
+
+.cont {
+
+    font-size: 30px;
+}
+
+.ord {
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+   
+   
+}
+
+.card {
+
+    margin:20px;
+
+}
+
