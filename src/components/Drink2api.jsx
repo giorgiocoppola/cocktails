@@ -11,6 +11,7 @@ function Drink2api() {
     const [letter2,setLetter2] = useState("");
     const [originalArray,setOriginalArray] = useState([])
 
+
     const getCocktail = (drinks) => {
 
         
@@ -99,34 +100,41 @@ const handlefilter8 = () => {
 
   return (
     <div>
-        <label htmlFor="letter">Inserisci il cocktail con la lettera 
+
+          <h1 className='text-center text-danger fw-bolder'>Cocktails 2</h1>
+          <p style={{textAlign:"center"}}><Link style={{color:"blue",textDecoration:"none",fontSize:"20px"}} to='/'>Drink</Link></p>
+
+        <label htmlFor="letter" className='ms-4'>Inserisci il cocktail con la lettera: 
             <input type="text" value={letter} onChange = { e => setLetter(e.target.value)} />
         </label>
         <button onClick={ () => setLetter2(letter) }>Cerca</button>
 
         <div className="categoria">
-              <button onClick={handlefilter} >Categoria Cocktail</button>
-              <button onClick={handlefilter2} >Categoria Ordinary Drink</button>
-              <button onClick={handlereset} >Reset</button>
+
+              <h3 className='text-dark'>Categoria</h3>
+              <button onClick={handlefilter}  className="btn btn-danger ms-3 mt-3" >Categoria Cocktail</button>
+              <button onClick={handlefilter2} className="btn btn-danger ms-3 mt-3" >Categoria Ordinary Drink</button>
+              <button onClick={handlereset} className="btn btn-danger ms-3 mt-3" >Reset</button>
         </div>
 
         <div className="gradazione">
-              <button onClick={handlefilter3} >Bevande alcoliche</button>
-              <button onClick={handlefilter4} >Bevande analcoliche</button>
-              <button onClick={handlereset} >Reset</button>
+
+              <h3 className='text-dark'>Gradazione</h3>
+              <button onClick={handlefilter3} className="btn btn-danger ms-3 mt-3" >Alcolica</button>
+              <button onClick={handlefilter4} className="btn btn-danger ms-3 mt-3">Analcolica</button>
+              <button onClick={handlereset} className="btn btn-danger ms-3 mt-3">Reset</button>
         </div>
      
         <div className="bicchieri">
-              <button onClick={handlefilter5} >Shot Glass</button>
-              <button onClick={handlefilter6} >Cocktail Glass</button>
-              <button onClick={handlefilter7} >Highball Glass</button>
-              <button onClick={handlefilter8} >Old-fashioned Glass</button>
-              <button onClick={handlereset} >Reset</button>
-        </div>
-    
 
-         <h1 className='text-center text-danger fw-bolder'>Cocktails 2</h1>
-          <p style={{textAlign:"center"}}><Link style={{color:"blue",textDecoration:"none",fontSize:"20px"}} to='/'>Drink</Link></p>
+              <h3 className='text-dark'>Glass</h3>
+              <button onClick={handlefilter5} className="btn btn-danger ms-3 mt-3">Shot Glass</button>
+              <button onClick={handlefilter6} className="btn btn-danger ms-3 mt-3">Cocktail Glass</button>
+              <button onClick={handlefilter7} className="btn btn-danger ms-3 mt-3">Highball Glass</button>
+              <button onClick={handlefilter8} className="btn btn-danger ms-3 mt-3">Old-fashioned Glass</button>
+              <button onClick={handlereset} className="btn btn-danger ms-3 mt-3">Reset</button>
+        </div>
+  
 
          <div className='card2'>
        {

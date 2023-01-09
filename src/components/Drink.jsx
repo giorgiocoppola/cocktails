@@ -4,6 +4,8 @@ import './Drink.css'
 function Drink({strDrinkThumb,strDrink,strAlcoholic,strCategory,strGlass,strIngredient1,strIngredient2,strIngredient3,strIngredient4}) {
 
     const [count,setCount] = useState(0);
+    const [message,setMessage] = useState("");
+    const [messagemax,setMessagemax] = useState("");
     const max = 5;
 
     const handleincrement = () => {
@@ -15,6 +17,8 @@ function Drink({strDrinkThumb,strDrink,strAlcoholic,strCategory,strGlass,strIngr
         } else {
 
            setCount(max);
+           setMessagemax("Hai raggiunto il max");
+           setTimeout( () => setMessagemax(""), 3000);
         }
     }
 
@@ -31,11 +35,27 @@ function Drink({strDrinkThumb,strDrink,strAlcoholic,strCategory,strGlass,strIngr
       }
   }
 
+  const handleordina = () => {
+
+      if(count === 0) {
+
+         setMessage("*Devi inserire un' ordine")
+         setTimeout( () => setMessage(""),3000);
+
+      } else {
+
+         setMessage("Ordine aggiunto");
+         setTimeout( () => setMessage(""),3000);
+      }
+
+      
+  } 
+
   return (
     <>
       <div className="card">
          <img src={strDrinkThumb} alt={strDrink} width="300px" height="300px"/>
-         <h3 className='text-center'>{strDrink}</h3>
+         <h3 className='text-center text-success fw-bolder'>{strDrink}</h3>
          <p  className='text-center'>Graduation: {strAlcoholic}</p>
          <p  className='text-center'>Category: {strCategory}</p>
          <p  className='text-center'>Glass: {strGlass}</p>
@@ -52,9 +72,12 @@ function Drink({strDrinkThumb,strDrink,strAlcoholic,strCategory,strGlass,strIngr
             <p className='cont fs-1'>{count}</p>
             <button className='dec btn btn-primary fs-4 rounded-circle' onClick = {handledecrement}>-</button>
          </div>
-          
+
+           <p className="text-center text-danger fw-bolder">{messagemax}</p>
+
           <div className='ord'>
-             <button className='ordina btn btn-primary fs-3 p-2'>Ordina</button>
+             <button onClick={handleordina} className='ordina btn btn-primary fs-3 p-2'>Ordina</button>
+             <p className="text-center text-danger fw-bolder">{message}</p>
           </div>
         
 
