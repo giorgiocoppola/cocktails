@@ -67,13 +67,55 @@ const Drinkapi = () => {
    
 }
 
-           
+const handlefilter3 = () => {
+         
+  const drinksfilter = originalArray.filter( drink => drink.strAlcoholic === "Alcoholic")
+  setDrinks(drinksfilter);
 
+}
 
- const resetdrinks = () => {
+const handlefilter4 = () => {
+
+  const drinksfilter = originalArray.filter( drink => drink.strAlcoholic === "Non alcoholic")
+  setDrinks(drinksfilter);
+
+}
+
+const handlefilter5 = () => {
+         
+  const drinksfilter = originalArray.filter( drink => drink.strGlass === "Shot Glass")
+  setDrinks(drinksfilter);
+
+}
+
+const handlefilter6 = () => {
+
+  const drinksfilter = originalArray.filter( drink => drink.strGlass === "Cocktail glass")
+  setDrinks(drinksfilter);
+
+}
+
+const handlefilter7 = () => {
+
+  const drinksfilter = originalArray.filter( drink => drink.strGlass === "Highball glass")
+  setDrinks(drinksfilter);
+
+}
+
+const handlefilter8 = () => {
+
+  const drinksfilter = originalArray.filter( drink => drink.strGlass === "Old-fashioned glass")
+  setDrinks(drinksfilter);
+
+}
+
+const handlereset  = () => {
 
   setDrinks(originalArray);
-}
+}           
+
+
+
   
   return (
     <div className='card-princ'>
@@ -84,10 +126,28 @@ const Drinkapi = () => {
        <button onClick={()=>setSearch2(search)} >Cerca</button>
       </label>
 
+      <div className="categoria">
+
+         <button onClick={handlefilter} >Categoria Cocktail</button>
+         <button onClick={handlefilter2} >Categoria Ordinary Drink</button>
+         <button onClick={handlereset} >Reset</button>
+
+      </div>
       
-       <button onClick={handlefilter} >Categoria Cocktail</button>
-       <button onClick={handlefilter2} >Categoria Ordinary Drink</button>
-       <button onClick={resetdrinks} >Reset</button>
+
+       <div className="gradazione">
+              <button onClick={handlefilter3} >Bevande alcoliche</button>
+              <button onClick={handlefilter4} >Bevande analcoliche</button>
+              <button onClick={handlereset} >Reset</button>
+        </div>
+
+        <div className="bicchieri">
+              <button onClick={handlefilter5} >Shot Glass</button>
+              <button onClick={handlefilter6} >Cocktail Glass</button>
+              <button onClick={handlefilter7} >Highball Glass</button>
+              <button onClick={handlefilter8} >Old-fashioned Glass</button>
+              <button onClick={handlereset} >Reset</button>
+        </div>
      
 
           <h1 className='text-center text-danger fw-bolder'>Cocktails</h1>

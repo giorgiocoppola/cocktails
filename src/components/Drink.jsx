@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Drink.css'
 
-function Drink({strDrinkThumb,strDrink,strAlcoholic,strCategory,strIngredient1,strIngredient2,strIngredient3,strIngredient4}) {
+function Drink({strDrinkThumb,strDrink,strAlcoholic,strCategory,strGlass,strIngredient1,strIngredient2,strIngredient3,strIngredient4}) {
 
     const [count,setCount] = useState(0);
     const max = 5;
@@ -38,6 +38,7 @@ function Drink({strDrinkThumb,strDrink,strAlcoholic,strCategory,strIngredient1,s
          <h3 className='text-center'>{strDrink}</h3>
          <p  className='text-center'>Graduation: {strAlcoholic}</p>
          <p  className='text-center'>Category: {strCategory}</p>
+         <p  className='text-center'>Glass: {strGlass}</p>
          <p  className='text-center'>Ingredients:</p>
          <ul>
             <li className='text-center'>{strIngredient1}</li>
