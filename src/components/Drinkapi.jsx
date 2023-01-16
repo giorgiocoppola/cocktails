@@ -115,7 +115,11 @@ const handlereset  = () => {
   setDrinks(originalArray);
 }           
 
+const handleDelete = idDrink => {
 
+  const deletedrink = drinks.filter( (drink) => drink.idDrink !== idDrink);
+  setDrinks(deletedrink);
+}
 
   
   return (
@@ -166,7 +170,7 @@ const handlereset  = () => {
        
        <div className='card2'>
        {
-        drinks?.map( drink => <Drink key={drink?.idDrink} {...drink} />)
+        drinks?.map( drink => <Drink key={drink?.idDrink} {...drink} handleDelete = {handleDelete} />)
        }
        </div>
     </div>

@@ -98,6 +98,12 @@ const handlefilter8 = () => {
      setDrinks(originalArray);
  }
 
+ const handleDelete = idDrink => {
+
+    const deletedrink = drinks.filter( (drink) => drink.idDrink !== idDrink);
+    setDrinks(deletedrink);
+ }
+
   return (
     <div>
 
@@ -138,7 +144,7 @@ const handlefilter8 = () => {
 
          <div className='card2'>
        {
-        drinks?.map( drink => <Drink2 key={drink?.idDrink} {...drink} />)
+        drinks?.map( drink => <Drink2 key={drink?.idDrink} {...drink} handleDelete={handleDelete} />)
        }
        </div>
     </div>

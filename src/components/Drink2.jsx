@@ -1,6 +1,6 @@
 import React , { useState } from 'react'
 
-function Drink2({strDrink,strDrinkThumb,strCategory,strAlcoholic,strGlass,strIngredient1,strIngredient2,strIngredient3,strIngredient4}) {
+function Drink2({idDrink,strDrink,strDrinkThumb,strCategory,strAlcoholic,strGlass,strIngredient1,strIngredient2,strIngredient3,strIngredient4,handleDelete}) {
 
   const [count,setCount] = useState(0);
   const [message,setMessage] = useState("");
@@ -79,7 +79,14 @@ const handleordina = () => {
          <p className="text-center text-danger fw-bolder">{messagemax}</p> 
 
           <div className='ord'>
-             <button onClick={handleordina} className='ordina btn btn-primary fs-3 p-2'>Ordina</button>
+
+             <div className="bot-ordina">
+
+               <button onClick={handleordina} className='ordina btn btn-primary fs-3 p-2'>Ordina</button>
+               <button  className='ordina btn btn-primary fs-3 p-2 ms-5' onClick={ () => handleDelete(idDrink)}>Elimina</button>
+
+             </div>
+
              <p className="text-center text-danger fw-bolder">{message}</p>
           </div>
     </div>
