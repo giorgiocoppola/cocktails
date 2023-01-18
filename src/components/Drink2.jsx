@@ -45,8 +45,10 @@ const handleordina = () => {
 
    } else {
 
+      setCount(0);
       setMessage("Ordine aggiunto");
       setTimeout( () => setMessage(""),3000);
+     
    }
 
    

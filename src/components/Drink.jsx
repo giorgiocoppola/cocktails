@@ -44,6 +44,7 @@ function Drink({idDrink,strDrinkThumb,strDrink,strAlcoholic,strCategory,strGlass
 
       } else {
 
+         setCount(0);
          setMessage("Ordine aggiunto");
          setTimeout( () => setMessage(""),3000);
       }
