@@ -126,7 +126,8 @@ const handleDelete = idDrink => {
     <div className='card-princ'>
 
       <h1 className='text-center text-danger fw-bolder'>Cocktails</h1>
-      <p className='text-center'><Link style={{color:"blue",textDecoration:"none",fontSize:"20px"}} to='/drink2'>Drink2</Link></p>
+      <p className='text-center'><Link style={{color:"blue",textDecoration:"none",fontSize:"20px"}} to='/drink2'>Drink2</Link>
+      <Link style={{color:"blue",textDecoration:"none",fontSize:"20px",marginLeft:'20px'}} to='/descrizione'>Descrizione</Link></p>
       
       <label htmlFor="search" className='ms-4'>
        Inserisci un nuovo cocktail:
