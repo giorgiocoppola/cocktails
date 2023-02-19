@@ -17,7 +17,8 @@ function Descrizione() {
 
            <p className='text-center mt-5'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia soluta adipisci libero nemo pariatur fugit, delectus eos consequuntur, accusamus voluptas debitis assumenda doloribus amet voluptatem magni explicabo. Quidem, sed. Et!</p>
            <p className='text-center'><Link style={{textDecoration:'none',fontSize:'20px',color:'blue'}} to='/'>Home</Link></p>
-          
+           <p>Ciao a tutti</p>
+
     </div>
   )
 }
