@@ -51,6 +51,13 @@ function Drink2api() {
     
     }
 
+    const handlefilter21 = () => {
+          
+      const drinksfilter = originalArray.filter( drink => drink.strCategory === "Shot")
+      setDrinks(drinksfilter);
+    
+    }
+
     const handlefilter3 = () => {
          
       const drinksfilter = originalArray.filter( drink => drink.strAlcoholic === "Alcoholic")
@@ -93,6 +100,13 @@ const handlefilter8 = () => {
 
 }
 
+const handlefilter81 = () => {
+
+  const drinksfilter = originalArray.filter( drink => drink.strGlass === "Collins glass")
+  setDrinks(drinksfilter);
+
+}
+
  const handlereset  = () => {
 
      setDrinks(originalArray);
@@ -120,6 +134,7 @@ const handlefilter8 = () => {
               <h3 className='text-dark'>Categoria</h3>
               <button onClick={handlefilter}  className="btn btn-danger ms-3 mt-3" >Categoria Cocktail</button>
               <button onClick={handlefilter2} className="btn btn-danger ms-3 mt-3" >Categoria Ordinary Drink</button>
+              <button onClick={handlefilter21} className="btn btn-danger ms-3 mt-3" >Categoria Shot</button>
               <button onClick={handlereset} className="btn btn-danger ms-3 mt-3" >Reset</button>
         </div>
 
@@ -138,6 +153,7 @@ const handlefilter8 = () => {
               <button onClick={handlefilter6} className="btn btn-danger ms-3 mt-3">Cocktail Glass</button>
               <button onClick={handlefilter7} className="btn btn-danger ms-3 mt-3">Highball Glass</button>
               <button onClick={handlefilter8} className="btn btn-danger ms-3 mt-3">Old-fashioned Glass</button>
+              <button onClick={handlefilter81} className="btn btn-danger ms-3 mt-3">Collins Glass</button>
               <button onClick={handlereset} className="btn btn-danger ms-3 mt-3">Reset</button>
         </div>
   
