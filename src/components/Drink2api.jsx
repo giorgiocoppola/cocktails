@@ -122,7 +122,9 @@ const handlefilter81 = () => {
     <div>
 
           <h1 className='text-center text-danger fw-bolder'>Cocktails 2</h1>
-          <p style={{textAlign:"center"}}><Link style={{color:"blue",textDecoration:"none",fontSize:"20px"}} to='/'>Drink</Link></p>
+
+          <p style={{textAlign:"center"}}><Link style={{color:"blue",textDecoration:"none",fontSize:"20px"}} to='/'>Drink</Link>
+         <Link style={{color:"blue",textDecoration:"none",fontSize:"20px",marginLeft:'20px'}} to='/descrizione'>Descrizione</Link></p>
 
         <label htmlFor="letter" className='ms-4'>Inserisci il cocktail con la lettera: 
             <input type="text" value={letter} onChange = { e => setLetter(e.target.value)} />
